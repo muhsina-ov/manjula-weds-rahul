@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Wedding Invitation | Dr. Manjula & Dr. Rahul | 23 - 25 Nov 2026</title>
+  <meta name="description" content="We cordially invite you to celebrate the wedding ceremonies of Dr. Manjula and Dr. Rahul from 23rd to 25th November 2026 at Terapanth Bhawan, Udhna, Surat." />
+  <meta property="og:title" content="Royal Wedding Invitation: Dr. Manjula Weds Dr. Rahul" />
+  <meta property="og:description" content="Join us in celebrating love and auspicious beginnings on 23-25 November 2026 in Surat." />
+  <meta property="og:image" content="assets/images/temple_bg.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#6b1426" />
+
+  <!-- Google Fonts for Royal Indian Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@600;700;900&family=Cinzel:wght@400;600;700;800&family=Great+Vibes&family=Rozha+One&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons for premium UI elements -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Floating Canvas for Golden Petals & Marigold Flowers -->
+  <canvas id="petalCanvas"></canvas>
+
+  <!-- Sound & Ambient Audio Toggle Floating Controls -->
+  <div class="floating-audio-bar" id="floatingControls">
+    <button id="audioToggleBtn" class="audio-btn" title="Toggle Shehnai Music" aria-label="Toggle traditional wedding music">
+      <i class="fa-solid fa-music music-icon"></i>
+      <span class="audio-label">Music</span>
+      <div class="sound-wave" id="soundWave">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </button>
+    <button id="petalToggleBtn" class="petal-btn" title="Toggle Petals Shower" aria-label="Toggle flower shower">
+      <i class="fa-solid fa-spa"></i>
+      <span class="petal-label">Petals</span>
+    </button>
+  </div>
+
+  <!-- ROYAL ENVELOPE OPENING OVERLAY (Tap to Open Wedding Invite) -->
+  <div class="envelope-overlay" id="envelopeOverlay">
+    <div class="envelope-card">
+      <div class="wax-seal-container" id="waxSealBtn">
+        <div class="shree-ganesha-badge">
+          <svg viewBox="0 0 100 100" class="ganesha-svg-seal">
+            <circle cx="50" cy="50" r="46" fill="none" stroke="#D4AF37" stroke-width="2" stroke-dasharray="3,3"/>
+            <!-- Stylized Ganesha Symbol -->
+            <path d="M50,15 C58,15 65,22 65,30 C65,37 59,43 53,46 C56,49 61,54 61,61 C61,72 49,79 38,75 C31,72 28,64 30,57 C31,52 35,49 40,49 C46,49 49,53 49,57 C49,61 46,64 42,64 C40,64 38,62 38,60 C38,58 39,56 41,56 C42,56 43,57 44,58 C45,57 46,55 46,53 C46,49 42,46 37,46 C30,46 25,52 25,60 C25,72 37,84 52,84 C66,84 76,73 76,59 C76,49 69,42 61,38 C67,34 71,27 70,19 C68,13 60,10 50,10 Z" fill="#D4AF37"/>
+            <circle cx="50" cy="22" r="3" fill="#D4AF37"/>
+          </svg>
+        </div>
+        <div class="seal-prompt">
+          <span class="mandala-sparkle">✦</span>
+          <span>OPEN INVITATION</span>
+          <span class="mandala-sparkle">✦</span>
+        </div>
+      </div>
+      <div class="envelope-intro-text">
+        <p class="sanskrit-shloka">॥ श्री गणेशाय नमः ॥</p>
+        <h2 class="envelope-names">Dr. Manjula &amp; Dr. Rahul</h2>
+        <p class="envelope-sub">Cordially invite you to celebrate their sacred union</p>
+        <p class="envelope-date">23 • 24 • 25 November 2026 | Surat</p>
+        <button class="open-invite-btn" id="openInviteButton">
+          <i class="fa-solid fa-envelope-open-text"></i> Open Wedding Card
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN INVITATION CONTAINER -->
+  <main class="invitation-container" id="mainInvitation">
+
+    <!-- Top Traditional Toran & Hanging Deepams Banner -->
+    <header class="royal-banner">
+      <div class="toran-garland"></div>
+      <div class="temple-diya-row">
+        <div class="hanging-lamp lamp-left">
+          <div class="lamp-chain"></div>
+          <div class="brass-diya">
+            <div class="diya-flame"></div>
+          </div>
+        </div>
+        <div class="invocation-box">
+          <p class="shloka-text">॥ वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ । निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥</p>
+          <div class="ganesha-symbol-header">
+            <span class="om-symbol">ॐ</span>
+            <span class="shree-text">श्री गणेशाय नमः</span>
+            <span class="om-symbol">ॐ</span>
+          </div>
+        </div>
+        <div class="hanging-lamp lamp-right">
+          <div class="lamp-chain"></div>
+          <div class="brass-diya">
+            <div class="diya-flame"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION: The Grand Temple Mandap -->
+    <section class="hero-section" id="hero">
+      <div class="hero-backdrop"></div>
+      <div class="hero-content">
+        <div class="auspicious-badge">
+          <span class="leaf-icon">🌿</span>
+          <span>Auspicious Wedding Celebration</span>
+          <span class="leaf-icon">🌿</span>
+        </div>
+
+        <p class="royal-welcome-text">We cordially invite you to celebrate the joyous union &amp; wedding of</p>
+
+        <!-- The Couple Names Banner -->
+        <div class="couple-title-box">
+          <div class="name-container bride-side">
+            <span class="doctor-badge"><i class="fa-solid fa-user-doctor"></i></span>
+            <h1 class="couple-name">Dr. Manjula</h1>
+            <div class="lineage-card">
+              <p class="lineage-relation">Daughter of</p>
+              <p class="parents-name">Smt. Amrika &amp; Shri Makhan Lal Thakur</p>
+              <p class="grandparents-name">Granddaughter of Late Smt. Sato bai &amp; Late Shri Itwari Ram</p>
+            </div>
+          </div>
+
+          <div class="sacred-knot-box">
+            <div class="knot-circle">
+              <span class="knot-symbol">weds</span>
+              <div class="varmala-icon">💐</div>
+            </div>
+          </div>
+
+          <div class="name-container groom-side">
+            <span class="doctor-badge"><i class="fa-solid fa-user-doctor"></i></span>
+            <h1 class="couple-name">Dr. Rahul</h1>
+            <div class="lineage-card">
+              <p class="lineage-relation">Son of</p>
+              <p class="parents-name">Smt. Dharma &amp; Shri Suresh Chandra Chaudhary</p>
+              <p class="grandparents-name">Grandson of Smt. Chandkor &amp; Late Shri Lachhu Ram</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Date & Location Quick Badge -->
+        <div class="quick-details-pill">
+          <div class="detail-item">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span>23 – 25 November 2026</span>
+          </div>
+          <div class="pill-divider">•</div>
+          <div class="detail-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Terapanth Bhawan, Udhna, Surat</span>
+          </div>
+        </div>
+
+        <!-- Quick Action Buttons -->
+        <div class="hero-cta-buttons">
+          <a href="#ceremonies" class="cta-gold-btn">
+            <i class="fa-solid fa-champagne-glasses"></i> View Ceremonies
+          </a>
+          <a href="#venue" class="cta-outline-btn">
+            <i class="fa-solid fa-map-location-dot"></i> Venue &amp; Directions
+          </a>
+          <a href="#rsvp" class="cta-rsvp-btn">
+            <i class="fa-solid fa-phone"></i> Contact &amp; RSVP
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE WEDDING COUNTDOWN -->
+    <section class="countdown-section" id="countdown">
+      <div class="temple-frame-header">
+        <h2 class="section-title">The Auspicious Countdown</h2>
+        <p class="section-subtitle">Counting every moment until the sacred phere</p>
+        <div class="gold-mandala-divider">
+          <span class="line"></span>
+          <span class="lotus-motif">🪷</span>
+          <span class="line"></span>
+        </div>
+      </div>
+
+      <div class="countdown-display" id="weddingTimer">
+        <div class="timer-card">
+          <span class="timer-num" id="days">00</span>
+          <span class="timer-label">Days</span>
+        </div>
+        <div class="timer-colon">:</div>
+        <div class="timer-card">
+          <span class="timer-num" id="hours">00</span>
+          <span class="timer-label">Hours</span>
+        </div>
+        <div class="timer-colon">:</div>
+        <div class="timer-card">
+          <span class="timer-num" id="minutes">00</span>
+          <span class="timer-label">Minutes</span>
+        </div>
+        <div class="timer-colon">:</div>
+        <div class="timer-card">
+          <span class="timer-num" id="seconds">00</span>
+          <span class="timer-label">Seconds</span>
+        </div>
+      </div>
+      <p class="timer-note">Commencing Monday, 23rd November 2026 • Surat</p>
+    </section>
+
+    <!-- SACRED CEREMONIES & ITINERARY -->
+    <section class="ceremonies-section" id="ceremonies">
+      <div class="temple-frame-header">
+        <span class="badge-decor">Wedding Festivities</span>
+        <h2 class="section-title">Program &amp; Ceremonies</h2>
+        <p class="section-subtitle">Join us in the traditional rituals, dance, laughter, and timeless celebrations</p>
+        <div class="gold-mandala-divider">
+          <span class="line"></span>
+          <span class="lotus-motif">✨</span>
+          <span class="line"></span>
+        </div>
+      </div>
+
+      <div class="timeline-container">
+
+        <!-- DAY 1: 23 NOV -->
+        <div class="day-group">
+          <div class="day-header-badge">
+            <span class="day-dot"></span>
+            <span class="day-title">Monday, 23rd November 2026</span>
+          </div>
+
+          <div class="event-cards-grid">
+            <!-- Event: Mehendi -->
+            <div class="event-card mehendi-theme">
+              <div class="event-icon-badge">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+              <div class="event-content">
+                <span class="event-time"><i class="fa-regular fa-clock"></i> 1:00 PM Onwards</span>
+                <h3 class="event-name">Mehendi Ceremony</h3>
+                <p class="event-desc">An afternoon filled with delicate henna strokes, joyful folk beats, and heartfelt blessings for the bride.</p>
+                <div class="event-meta">
+                  <span class="event-tag"><i class="fa-solid fa-palette"></i> Henna Green &amp; Pastels</span>
+                </div>
+                <button class="cal-btn" onclick="addToCalendar('Mehendi Ceremony', '2026-11-23T13:00:00', '2026-11-23T18:00:00', 'Terapanth Bhawan, Udhna, Surat', 'Mehendi ceremony for Dr. Manjula & Dr. Rahul')">
+                  <i class="fa-regular fa-calendar-plus"></i> Add to Calendar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 2: 24 NOV -->
+        <div class="day-group">
+          <div class="day-header-badge">
+            <span class="day-dot"></span>
+            <span class="day-title">Tuesday, 24th November 2026</span>
+          </div>
+
+          <div class="event-cards-grid two-cols">
+            <!-- Event: Haldi Carnival -->
+            <div class="event-card haldi-theme">
+              <div class="event-icon-badge">
+                <i class="fa-solid fa-sun"></i>
+              </div>
+              <div class="event-content">
+                <span class="event-time"><i class="fa-regular fa-clock"></i> 12:00 PM Onwards</span>
+                <h3 class="event-name">Haldi Carnival</h3>
+                <p class="event-desc">Drenched in auspicious turmeric, fragrant flower petals, splash of colours, and playful celebration!</p>
+                <div class="event-meta">
+                  <span class="event-tag"><i class="fa-solid fa-palette"></i> Marigold Yellow &amp; Floral</span>
+                </div>
+                <button class="cal-btn" onclick="addToCalendar('Haldi Carnival', '2026-11-24T12:00:00', '2026-11-24T16:00:00', 'Terapanth Bhawan, Udhna, Surat', 'Haldi Carnival celebration of Dr. Manjula & Dr. Rahul')">
+                  <i class="fa-regular fa-calendar-plus"></i> Add to Calendar
+                </button>
+              </div>
+            </div>
+
+            <!-- Event: Sangeet Gala Night -->
+            <div class="event-card sangeet-theme">
+              <div class="event-icon-badge">
+                <i class="fa-solid fa-guitar"></i>
+              </div>
+              <div class="event-content">
+                <span class="event-time"><i class="fa-regular fa-clock"></i> 7:30 PM Onwards</span>
+                <h3 class="event-name">Sangeet Gala Night</h3>
+                <p class="event-desc">An evening of electrifying dance performances, melodious tunes, glittering celebrations, and grand feast.</p>
+                <div class="event-meta">
+                  <span class="event-tag"><i class="fa-solid fa-palette"></i> Shimmer, Royal &amp; Indo-Western</span>
+                </div>
+                <button class="cal-btn" onclick="addToCalendar('Sangeet Gala Night', '2026-11-24T19:30:00', '2026-11-24T23:30:00', 'Terapanth Bhawan, Udhna, Surat', 'Sangeet Gala Night for Dr. Manjula & Dr. Rahul')">
+                  <i class="fa-regular fa-calendar-plus"></i> Add to Calendar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 3: 25 NOV (THE WEDDING DAY) -->
+        <div class="day-group wedding-main-day">
+          <div class="day-header-badge highlight-badge">
+            <span class="day-dot pulsate"></span>
+            <span class="day-title">Wednesday, 25th November 2026 • The Auspicious Wedding Day</span>
+          </div>
+
+          <div class="wedding-timeline-stepper">
+
+            <!-- Step 1: Baarat Aagman -->
+            <div class="stepper-item">
+              <div class="step-time">1:00 PM</div>
+              <div class="step-point">
+                <i class="fa-solid fa-drum"></i>
+              </div>
+              <div class="step-card">
+                <h4>Baarat Aagman</h4>
+                <p>Grand welcome of the groom's procession with beats of dhol, traditional shehnai, and flower shower.</p>
+                <span class="step-tag">Grand Welcome</span>
+              </div>
+            </div>
+
+            <!-- Step 2: Phere (Sacred Vows) -->
+            <div class="stepper-item highlight-step">
+              <div class="step-time">3:00 PM</div>
+              <div class="step-point auspicious">
+                <i class="fa-solid fa-fire-burner"></i>
+              </div>
+              <div class="step-card">
+                <div class="sacred-seal">॥ सप्तपदी ॥</div>
+                <h4>Shubh Vivah &amp; Sacred Phere</h4>
+                <p>The sacred vows around the holy fire (Agni Sakshi), hastamelap, and exchange of varmala under the temple mandap.</p>
+                <span class="step-tag sacred">Auspicious Muhurat</span>
+              </div>
+            </div>
+
+            <!-- Step 3: Reception & Blessings -->
+            <div class="stepper-item">
+              <div class="step-time">7:00 PM (Gathering 4:00 PM Onwards)</div>
+              <div class="step-point">
+                <i class="fa-solid fa-crown"></i>
+              </div>
+              <div class="step-card">
+                <h4>Grand Wedding Reception</h4>
+                <p>Celebration banquet, photo session with the newly wed couple, and conferring blessings to Dr. Manjula &amp; Dr. Rahul.</p>
+                <span class="step-tag">Dinner &amp; Reception</span>
+              </div>
+            </div>
+
+            <!-- Step 4: Vidaai -->
+            <div class="stepper-item">
+              <div class="step-time">11:00 PM</div>
+              <div class="step-point">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+              <div class="step-card">
+                <h4>Vidaai Ceremony</h4>
+                <p>Heartfelt emotional farewell and warm blessings as the bride embarks on her new journey with the Chaudhary family.</p>
+                <span class="step-tag">Aashirvaad</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Add Whole Wedding to Calendar -->
+          <div class="center-calendar-btn">
+            <button class="cal-btn-main" onclick="addFullWeddingToCalendar()">
+              <i class="fa-solid fa-calendar-days"></i> Add Entire Wedding to My Calendar
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VENUE & GOOGLE MAPS SECTION -->
+    <section class="venue-section" id="venue">
+      <div class="temple-frame-header">
+        <span class="badge-decor">Sacred Destination</span>
+        <h2 class="section-title">Venue &amp; Location</h2>
+        <p class="section-subtitle">We await your gracious presence with open hearts</p>
+        <div class="gold-mandala-divider">
+          <span class="line"></span>
+          <span class="lotus-motif">🏛️</span>
+          <span class="line"></span>
+        </div>
+      </div>
+
+      <div class="venue-card-wrapper">
+        <div class="venue-info-box">
+          <div class="temple-icon-head">
+            <i class="fa-solid fa-place-of-worship"></i>
+          </div>
+          <h3 class="venue-name">Terapanth Bhawan</h3>
+          <p class="venue-area"><i class="fa-solid fa-location-crosshairs"></i> Udhna, Surat, Gujarat</p>
+          <div class="venue-divider"></div>
+          
+          <div class="venue-highlights">
+            <div class="vh-item">
+              <i class="fa-solid fa-car"></i>
+              <span>Valet &amp; ample parking available</span>
+            </div>
+            <div class="vh-item">
+              <i class="fa-solid fa-train"></i>
+              <span>Easily accessible from Surat Railway Station &amp; Airport</span>
+            </div>
+            <div class="vh-item">
+              <i class="fa-solid fa-clock"></i>
+              <span>25th November: Guest reception from 4:00 PM onwards</span>
+            </div>
+          </div>
+
+          <div class="venue-actions">
+            <!-- Direct Google Maps link provided by user -->
+            <a href="https://share.google/MuknIQ9mJxqA9zH63" target="_blank" rel="noopener noreferrer" class="map-link-btn">
+              <i class="fa-solid fa-diamond-turn-right"></i> Open in Google Maps
+            </a>
+            <button class="copy-address-btn" id="copyAddressBtn">
+              <i class="fa-regular fa-copy"></i> Copy Address
+            </button>
+          </div>
+        </div>
+
+        <div class="venue-visual-box">
+          <div class="mandap-preview-frame">
+            <img src="assets/images/temple_mandap.jpg" alt="Temple Mandap Architectural Decor" class="mandap-img" />
+            <div class="mandap-overlay-tag">
+              <span><i class="fa-solid fa-om"></i> Terapanth Bhawan • Udhna Surat</span>
+            </div>
+          </div>
+          <a href="https://share.google/MuknIQ9mJxqA9zH63" target="_blank" rel="noopener noreferrer" class="interactive-map-banner">
+            <div class="map-hint">
+              <i class="fa-solid fa-location-arrow fa-bounce"></i>
+              <div>
+                <strong>Tap for Navigation Route</strong>
+                <small>https://share.google/MuknIQ9mJxqA9zH63</small>
+              </div>
+            </div>
+            <span class="route-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP & FAMILY CONTACTS SECTION -->
+    <section class="rsvp-section" id="rsvp">
+      <div class="temple-frame-header">
+        <span class="badge-decor">Gratitude &amp; Respect</span>
+        <h2 class="section-title">RSVP &amp; Cordial Invitation</h2>
+        <p class="section-subtitle">Chaudhary &amp; Thakur Family eagerly awaits your presence and blessings</p>
+        <div class="gold-mandala-divider">
+          <span class="line"></span>
+          <span class="lotus-motif">🙏</span>
+          <span class="line"></span>
+        </div>
+      </div>
+
+      <!-- Family Hosts Cards -->
+      <div class="rsvp-contacts-grid">
+        
+        <!-- Host 1: Mr Suresh Chandra Chaudhary -->
+        <div class="host-contact-card">
+          <div class="host-crest">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <div class="host-family-label">Groom's Family</div>
+          <h3 class="host-name">Mr. Suresh Chandra Chaudhary</h3>
+          <p class="host-title">Chaudhary Family</p>
+          <div class="phone-number">
+            <i class="fa-solid fa-phone-volume"></i> +91 7990650712
+          </div>
+          <div class="contact-actions">
+            <a href="tel:+917990650712" class="call-btn" title="Call Mr. Suresh Chandra Chaudhary">
+              <i class="fa-solid fa-phone"></i> Call Now
+            </a>
+            <a href="https://wa.me/917990650712?text=Namaste%20Chaudhary%20Family!%20Heartiest%20congratulations%20on%20the%20wedding%20of%20Dr.%20Manjula%20and%20Dr.%20Rahul." target="_blank" rel="noopener noreferrer" class="whatsapp-btn" title="Message on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Host 2: Mr Makhan Lal Thakur -->
+        <div class="host-contact-card">
+          <div class="host-crest">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <div class="host-family-label">Bride's Family</div>
+          <h3 class="host-name">Mr. Makhan Lal Thakur</h3>
+          <p class="host-title">Thakur Family</p>
+          <div class="phone-number">
+            <i class="fa-solid fa-phone-volume"></i> +91 9893633282
+          </div>
+          <div class="contact-actions">
+            <a href="tel:+919893633282" class="call-btn" title="Call Mr. Makhan Lal Thakur">
+              <i class="fa-solid fa-phone"></i> Call Now
+            </a>
+            <a href="https://wa.me/919893633282?text=Namaste%20Thakur%20Family!%20Heartiest%20congratulations%20on%20the%20wedding%20of%20Dr.%20Manjula%20and%20Dr.%20Rahul." target="_blank" rel="noopener noreferrer" class="whatsapp-btn" title="Message on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Interactive Digital Blessings Guestbook -->
+      <div class="blessings-card-container">
+        <div class="blessings-header">
+          <div class="diya-bullet">🪔</div>
+          <div>
+            <h3>Confer Your Divine Blessings</h3>
+            <p>Leave a warm wish for Dr. Manjula &amp; Dr. Rahul</p>
+          </div>
+        </div>
+
+        <form id="blessingForm" class="blessing-form">
+          <div class="form-row">
+            <div class="input-group">
+              <label for="guestName"><i class="fa-solid fa-user"></i> Your Full Name</label>
+              <input type="text" id="guestName" placeholder="e.g. Ramesh &amp; Family" required />
+            </div>
+            <div class="input-group">
+              <label for="guestAttendance"><i class="fa-solid fa-calendar-check"></i> Will You Grace The Occasion?</label>
+              <select id="guestAttendance" required>
+                <option value="Joyfully Attending All Ceremonies">Joyfully Attending All Ceremonies (23-25 Nov)</option>
+                <option value="Attending Wedding & Reception (25 Nov)">Attending Wedding &amp; Reception (25 Nov)</option>
+                <option value="Attending Sangeet & Reception">Attending Sangeet &amp; Reception</option>
+                <option value="Sending Warm Wishes in Spirit">Sending Warm Wishes in Spirit</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="guestMessage"><i class="fa-solid fa-envelope-open"></i> Your Blessings &amp; Message</label>
+            <textarea id="guestMessage" rows="3" placeholder="Wishing the couple a lifetime of boundless love, health, and prosperity..." required></textarea>
+          </div>
+          <button type="submit" class="submit-blessing-btn">
+            <i class="fa-solid fa-hands-praying"></i> Send Blessings to the Couple
+          </button>
+        </form>
+
+        <!-- Live Blessing Wall Preview -->
+        <div class="live-blessings-wall" id="blessingsWall">
+          <h4 class="wall-title"><i class="fa-solid fa-comments"></i> Family &amp; Friends' Heartfelt Wishes</h4>
+          <div class="blessing-cards-list" id="blessingList">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Share Invitation & Download Option -->
+      <div class="share-invitation-box">
+        <h4>Share This Invitation with Relatives &amp; Friends</h4>
+        <div class="share-btn-group">
+          <button class="share-wa-btn" id="shareWhatsAppBtn">
+            <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+          </button>
+          <button class="copy-link-btn" id="copyLinkBtn">
+            <i class="fa-solid fa-share-nodes"></i> Copy Invitation Link
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- FOOTER: Traditional Blessings & Signature -->
+    <footer class="royal-footer">
+      <div class="footer-ganesha">
+        <span class="om-large">ॐ</span>
+      </div>
+      <p class="footer-blessing-quote">
+        "Two souls, one sacred bond, blessed by the divine light of love and heritage."
+      </p>
+      <div class="footer-family-names">
+        <p class="family-sign">With Best Compliments &amp; Warm Regards from</p>
+        <h3 class="grand-family-title">Chaudhary &amp; Thakur Family</h3>
+        <p class="relatives-credit">Near &amp; Dear Relatives • Friends &amp; Well-wishers</p>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="copyright-note">
+        Wedding of Dr. Manjula &amp; Dr. Rahul • 23 to 25 November 2026 • Terapanth Bhawan, Surat
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- Toast Notification Popup -->
+  <div class="toast-notice" id="toastNotice">Address copied to clipboard!</div>
+
+  <!-- Audio Synthesizer & Traditional Ambient Raga Script -->
+  <script src="script.js"></script>
+</body>
+</html>
