@@ -12,8 +12,8 @@ import { ScrollProgress } from "@/components/wedding/ScrollProgress";
 const title = "Dr. Manjula weds Dr. Rahul — Wedding Invitation";
 const description =
   "We cordially invite you to celebrate the wedding of Dr. Manjula and Dr. Rahul on 23, 24 & 25 November 2026. RSVP: Chaudhary & Thakur Family.";
-const siteUrl = "https://manjula-weds-rahul.pages.dev/";
-const ogImage = "https://manjula-weds-rahul.pages.dev/og-image.png";
+const siteUrl = "https://manjula-weds-rahul.invitingyou.top/";
+const ogImage = "https://manjula-weds-rahul.invitingyou.top/og-image.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,9 +25,12 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:image", content: ogImage },
+      { property: "og:image:secure_url", content: ogImage },
+      { property: "og:image:type", content: "image/png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: "Dr. Manjula & Dr. Rahul Wedding Invitation" },
+      { property: "og:site_name", content: "Dr. Manjula weds Dr. Rahul" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:url", content: siteUrl },
       { name: "twitter:title", content: title },
