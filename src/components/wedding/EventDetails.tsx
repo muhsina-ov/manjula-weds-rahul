@@ -29,8 +29,8 @@ function addToCalendar() {
     `DTSTART:${icsStamp(wedding.dateISO)}`,
     `DTEND:${icsStamp(wedding.endISO)}`,
     `SUMMARY:Wedding: ${wedding.bride.name} & ${wedding.groom.name}`,
-    `LOCATION:Wedding Celebration`,
-    `DESCRIPTION:We cordially invite you to the wedding of ${wedding.bride.fullName} & ${wedding.groom.fullName}.`,
+    `LOCATION:${wedding.venue.name}\\, ${wedding.venue.area}`,
+    `DESCRIPTION:We cordially invite you to the wedding of ${wedding.bride.fullName} & ${wedding.groom.fullName}. Venue: ${wedding.venue.name}\\, ${wedding.venue.area}. Maps: ${wedding.venue.mapsUrl}`,
     "END:VEVENT",
     "END:VCALENDAR",
   ].join("\r\n");

@@ -5,6 +5,8 @@ import { Hero } from "@/components/wedding/Hero";
 import { Couple } from "@/components/wedding/Couple";
 import { Countdown } from "@/components/wedding/Countdown";
 import { EventDetails } from "@/components/wedding/EventDetails";
+import { Venue } from "@/components/wedding/Venue";
+import { WeddingMusic } from "@/components/wedding/WeddingMusic";
 import { Footer } from "@/components/wedding/Footer";
 import { Opener } from "@/components/wedding/Opener";
 import { ScrollProgress } from "@/components/wedding/ScrollProgress";
@@ -58,6 +60,7 @@ function Invitation() {
       </AnimatePresence>
 
       {opened && <ScrollProgress />}
+      <WeddingMusic started={opened} />
 
       <motion.main
         initial={{ opacity: 0, scale: 1.03 }}
@@ -69,6 +72,7 @@ function Invitation() {
         <Couple />
         <Countdown />
         <EventDetails />
+        <Venue />
         <Footer />
       </motion.main>
     </>

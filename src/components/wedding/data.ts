@@ -123,6 +123,28 @@ export const wedding = {
         phone: "+91 98936 33282",
         phoneClean: "9893633282",
       },
+      {
+        name: "Mr. Rupesh Kumar Thakur",
+        phone: "+91 89668 88436",
+        phoneClean: "8966888436",
+      },
+      {
+        name: "Mr. Rajat Chaudhary",
+        phone: "+91 88665 82285",
+        phoneClean: "8866582285",
+      },
     ] as ContactRSVP[],
+  },
+  venue: {
+    name: "Terapanth Bhavan",
+    area: "Udhna, Surat, Gujarat",
+    address: "Terapanth Bhavan, Udhna, Surat, Gujarat",
+    mapsUrl: "https://share.google/MuknIQ9mJxqA9zH63",
+    embedUrl:
+      "https://maps.google.com/maps?q=Terapanth%20Bhavan%20Udhna%20Surat%20Gujarat&t=&z=16&ie=UTF8&iwloc=&output=embed",
+  },
+  music: {
+    youtubeId: "FUlKPK9jPzM",
+    shortsUrl: "https://youtube.com/shorts/FUlKPK9jPzM",
   },
 };
