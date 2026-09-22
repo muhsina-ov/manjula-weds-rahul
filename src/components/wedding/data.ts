@@ -3,6 +3,7 @@ export interface ScheduleEvent {
   time: string;
   badge?: string;
   note?: string;
+  dressCode?: string;
 }
 
 export interface DaySchedule {
@@ -25,7 +26,7 @@ export const wedding = {
     parents: "S/o Dharma & Suresh Chandra Chaudhary",
     grandparents: "Grand son of Smt. Chandkor & Lt. Lachhu Ram",
     note: "A calm, optimistic ophthalmologist who loves to travel, sweets, sports, & PS5, and has mastered the art of calming his overthinking bride.",
-    image: "https://media.invitestory.in/kerala-sands/images/groom.png",
+    image: "/images/groom.jpg",
   },
   bride: {
     name: "Dr. Manjula",
@@ -34,7 +35,7 @@ export const wedding = {
     parents: "D/o Amrika & Makhan Lal Thakur",
     grandparents: "Grand daughter of Lt. Sato bai & Lt. Itwari Ram",
     note: "A cheerful, extroverted dermatologist who loves to travel, hit the gym, explorer, enjoys Asian food, and lovingly annoy her groom. 🤭",
-    image: "https://media.invitestory.in/kerala-sands/images/bride.png",
+    image: "/images/bride.jpg",
   },
   story: {
     tagline: "Two doctors. Two personalities. One beautiful love story. ❤️",
@@ -58,6 +59,7 @@ export const wedding = {
           time: "1:00 PM onwards",
           badge: "Colors & Henna",
           note: "Beginning the celebrations with joy, fragrance of fresh henna, and musical rhythms.",
+          dressCode: "Sage Green",
         },
       ],
     },
@@ -70,12 +72,14 @@ export const wedding = {
           time: "12:00 PM onwards",
           badge: "Yellow Splashes",
           note: "A sun-kissed celebration of love, turmeric blessings, and playful carnival vibes.",
+          dressCode: "Yellow",
         },
         {
           title: "Sangeet Gala Night",
           time: "7:30 PM onwards",
           badge: "Music & Dance",
           note: "An electrifying evening of performances, melodies, dance, and joyous cheers.",
+          dressCode: "Indo-Western",
         },
       ],
     },
@@ -88,24 +92,28 @@ export const wedding = {
           time: "1:00 PM onwards",
           badge: "Royal Welcome",
           note: "Welcoming the groom and the celebratory procession with dhol and pomp.",
+          dressCode: "Traditional",
         },
         {
           title: "Phere",
           time: "3:00 PM onwards",
           badge: "Sacred Vows",
           note: "The sacred seven steps around the holy fire, uniting two souls forever.",
+          dressCode: "Traditional",
         },
         {
           title: "Reception",
           time: "7:00 PM onwards",
           badge: "Celebration Dinner",
           note: "An evening of royal dining, heartfelt blessings, and memorable portraits.",
+          dressCode: "Traditional",
         },
         {
           title: "Vidaai",
           time: "11:00 PM",
           badge: "Blessings & Farewell",
           note: "Sending off the newlyweds with tearful blessings and endless love.",
+          dressCode: "Traditional",
         },
       ],
     },

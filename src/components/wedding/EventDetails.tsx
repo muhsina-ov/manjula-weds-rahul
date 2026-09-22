@@ -9,6 +9,7 @@ import {
   Music,
   PartyPopper,
   HeartHandshake,
+  Shirt,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { wedding, type DaySchedule } from "./data";
@@ -117,6 +118,12 @@ export function EventDetails() {
                               <Clock className="h-3.5 w-3.5" />
                               <span>{evt.time}</span>
                             </p>
+                            {evt.dressCode && (
+                              <p className="mt-1.5 inline-flex items-center gap-1.5 rounded-full bg-gold/15 border border-gold/30 px-2.5 py-1 text-[0.65rem] font-medium tracking-wide text-primary">
+                                <Shirt className="h-3.5 w-3.5 text-gold" />
+                                <span>Outfit: {evt.dressCode}</span>
+                              </p>
+                            )}
                             {evt.note && (
                               <p className="text-muted-foreground mt-1.5 text-xs leading-relaxed">
                                 {evt.note}
