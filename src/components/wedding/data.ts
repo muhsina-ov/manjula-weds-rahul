@@ -144,6 +144,7 @@ export const wedding = {
       "https://maps.google.com/maps?q=Terapanth%20Bhavan%20Udhna%20Surat%20Gujarat&t=&z=16&ie=UTF8&iwloc=&output=embed",
   },
   music: {
+    src: "/audio/wedding-song.mp3",
     youtubeId: "FUlKPK9jPzM",
     shortsUrl: "https://youtube.com/shorts/FUlKPK9jPzM",
   },
